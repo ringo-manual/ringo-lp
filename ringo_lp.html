@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【Ringo】無痛の防具マニュアル</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-base: #0a0a0c;
+            --bg-surface: #141417;
+            --text-main: #e8e8e8;
+            --text-muted: #9a9a9f;
+            --accent-gold: #d4af37;
+            --accent-gold-dim: rgba(212, 175, 55, 0.15);
+            --accent-red: #ff4d4f;
+            --accent-red-dim: rgba(255, 77, 79, 0.1);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.03em;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 80px 0 40px;
+            border-bottom: 1px solid var(--border-light);
+            background: radial-gradient(circle at top, rgba(212,175,55,0.06), transparent 60%);
+        }
+        .hero .subtitle {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.2em;
+            margin-bottom: 15px;
+            display: inline-block;
+            text-transform: uppercase;
+            border: 1px solid var(--accent-gold);
+            padding: 4px 12px;
+            border-radius: 2px;
+        }
+        .hero h1 {
+            font-size: 1.8rem;
+            line-height: 1.6;
+            color: #ffffff;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        .hero .highlight-title {
+            color: var(--accent-gold);
+            font-size: 2.4rem;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+
+
+        /* ── 権威性セクション（冒頭） ── */
+        .authority-section {
+            background: var(--bg-surface);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 35px 30px;
+            margin: 50px 0;
+        }
+        .authority-section p {
+            margin: 0 0 15px;
+            color: #d0d0d0;
+        }
+        .authority-section p:last-child {
+            margin-bottom: 0;
+        }
+        .authority-section .quote {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: #fff;
+            border-top: 1px solid var(--border-light);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* ── フィルター ── */
+        .filter-section {
+            background: var(--bg-surface);
+            border: 1px solid var(--accent-red-dim);
+            border-radius: 8px;
+            padding: 35px 30px;
+            margin: 50px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .filter-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: var(--accent-red);
+            border-radius: 8px 8px 0 0;
+        }
+        .filter-section h2 {
+            color: var(--accent-red);
+            font-size: 1.1rem;
+            margin-top: 0;
+            text-align: center;
+        }
+        .list-ng, .list-ok {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .list-ng li, .list-ok li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .list-ng li::before { content: '✖️'; position: absolute; left: 0; top: 1px; }
+        .list-ok li::before { content: '⭕️'; position: absolute; left: 0; top: 1px; }
+
+        /* ── 共通セクション ── */
+        .section-block {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .section-block h2 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .pain-list {
+            background: var(--bg-surface);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid var(--text-muted);
+            list-style: none;
+        }
+        .pain-list li {
+            margin-bottom: 15px;
+            color: #d0d0d0;
+        }
+        .pain-list li::before {
+            content: '…';
+            margin-right: 8px;
+            color: var(--text-muted);
+        }
+
+        /* ── 客目線データ（なぜ正しいか） ── */
+        .evidence-box {
+            background: var(--bg-surface);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .evidence-box .evidence-label {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .evidence-box p {
+            margin: 0;
+            color: #d0d0d0;
+            font-size: 0.95rem;
+            line-height: 1.9;
+        }
+
+        /* ── フィーチャーカード ── */
+        .feature-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+        }
+        .feature-card h3 {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .feature-number {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* ── 目次 ── */
+        .toc-list {
+            list-style: none;
+            padding: 30px;
+            background: var(--bg-surface);
+            border-radius: 8px;
+            margin: 0;
+        }
+        .toc-list li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-light);
+            display: flex;
+            flex-direction: column;
+        }
+        .toc-list li:last-child { border-bottom: none; }
+        .toc-chapter { color: var(--accent-gold); font-weight: 500; font-size: 0.9rem; }
+        .toc-title { color: #fff; }
+
+        /* ── 数字ハイライト ── */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-item {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-num {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .price-box {
+            background: var(--bg-surface);
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-gold);
+        }
+        .price-label {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .price-value {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 3.5rem;
+            color: #fff;
+            line-height: 1;
+            margin: 10px 0 5px;
+        }
+        .price-tax { font-size: 0.9rem; color: var(--text-muted); }
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
+            color: #0a0a0c;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding: 22px 40px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-gold);
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #eadd7a 0%, #c19600 100%);
+        }
+
+        .notes-box {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border-light);
+            padding: 25px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 40px;
+            text-align: left;
+        }
+        .notes-box ul { padding-left: 20px; margin: 10px 0 0; }
+        .notes-box li { margin-bottom: 8px; }
+        .notes-box a { color: var(--text-muted); text-decoration: underline; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.4rem; }
+            .hero .highlight-title { font-size: 1.8rem; }
+            .filter-section { padding: 25px 20px; }
+            .cta-button { font-size: 1.1rem; padding: 18px 20px; }
+            .price-value { font-size: 2.8rem; }
+            .stats-row { grid-template-columns: 1fr 1fr; }
+            .authority-bar { gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <header class="hero">
+        <span class="subtitle">Ringo Official Manual</span>
+        <h1 class="serif">
+            長文LINE・説教客・無理な営業を止めて<br>
+            静かな良客で単価を上げるための<br>
+            <span class="highlight-title">『無痛の防具マニュアル』</span>
+        </h1>
+
+    </header>
+
+    <!-- 権威性（冒頭） -->
+    <div class="authority-section">
+        <p>はじめまして、Ringoです。</p>
+        <p>私はかつて、<strong>卒業まで18ヶ月連続でNo.1を維持していた時期がありました。</strong>でもそれは、誰よりも多くのお客様を取ったからじゃない。<strong>消耗するお客様との関係を手放して、少数の方々に特に深く寄り添う接客を丁寧に整えた</strong>からです。</p>
+        <p>このマニュアルには、私が現場で積み上げた経験だけでなく、<strong>実際に複数年通い続けた安定して長く通ってくださるお客様の視点</strong>——「なぜその子を指名し続けたのか」「何が萎えて離れたのか」——も整理して落とし込んでいます。</p>
+        <p>女の子側の経験談だけで書かれた教材は山ほどあります。でも、<strong>「なぜ安定して長く通ってくださるお客様が通い続けるのか」を、客の心理まで含めてここまで整理したものは、少なくとも私が見てきた中では多くありません。</strong></p>
+        <p class="quote serif">「選ばれ続ける人はテクニックじゃなく、在り方が違うだけ。」</p>
+    </div>
+
+    <!-- FILTER -->
+    <div class="filter-section">
+        <h2 class="serif">⚠️ この先を読み進める前の「確認事項」</h2>
+        <p style="font-size: 0.95rem;">このマニュアルは、<strong>「自分の心と体を守りながら、無理な営業をやめて静かな良客だけで月100万を目指したい子」</strong>に向けた実践書です。</p>
+
+        <p style="color: var(--accent-red); font-weight: bold; font-size: 0.9rem; margin-top: 25px;">ただし、以下のような方には向いていません。購入しないでください。</p>
+        <ul class="list-ng">
+            <li>明るく盛り上げて、毎日何人ものお客様を数で回して稼ぎたい子</li>
+            <li>自分の素顔を曝け出して、SNSでギラギラと集客したい子</li>
+            <li>お酒やノリの良さで、若い客層を広く浅く取りたい子</li>
+            <li>「明日いきなり100万円稼げる魔法」を探している子</li>
+        </ul>
+
+        <p style="color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; margin-top: 25px;">このマニュアルは、次のような「あなた」のために書きました。</p>
+        <ul class="list-ok">
+            <li>長文LINEや無休の無理な営業に、もう心が折れそうな子</li>
+            <li>自分の心と時間を守りながら、静かな良客だけで単価を上げたい子</li>
+            <li>説教客やモラハラ客の「ノイズ」を切り落とし、安心できる関係を築きたい子</li>
+            <li>現場で「削られにくく帰るための具体的な行動」が知りたい子</li>
+        </ul>
+    </div>
+
+    <!-- 本音の代弁 -->
+    <div style="padding: 20px 0 40px; border-bottom: 1px solid var(--border-light);">
+        <p style="font-family:'Noto Serif JP',serif; font-size:1.05rem; line-height:2; color:#d0d0d0;">
+            本当は、ただ稼ぎたいわけじゃないはず。<br>
+            雑に扱われず、無理してる感も出さず、それでもちゃんと価値を払われる働き方が欲しいはず。<br>
+            そしてできるなら、いつかこの世界に人生を握られない状態まで持っていきたい。<br><br>
+            もう、<strong style="color:#fff;">優しい方が損をする働き方</strong>を続けたくないはず。<br>
+            そして本当は、<strong style="color:#fff;">押されたら崩れる側</strong>を終わらせたいはず。<br><br>
+            <strong style="color:#fff;">このマニュアルは、そのための最初の土台です。</strong>
+        </p>
+    </div>
+
+    <!-- PAIN -->
+    <section class="section-block">
+        <h2 class="serif">毎日の出勤が「怖い」「限界だ」と思っているあなたへ</h2>
+        <p>お店で接客していて、こんな風に息が詰まることはありませんか？</p>
+        <ul class="pain-list">
+            <li>「長文の説教LINEが止まらなくて、スマホを見るのが怖い」</li>
+            <li>「『俺が育ててやる』と息巻くお客様の相手で、魂が削られる」</li>
+            <li>「退室時間を守らないお客様に振り回されて、最後まで気が抜けない」</li>
+            <li>「お触りや理不尽な要求をされても、お店にどう助けを求めていいか分からない」</li>
+        </ul>
+
+        <p style="margin-top: 30px;">あなたが毎日しんどいのは、あなたの「接客スキルが低い」からではありません。<br>
+        あなたが優しくて、真面目で、<strong>「何の防具も持たずに、危ない現場に立っているから」</strong>です。<br><br>
+        本当はもう、<strong>押してくる方が得をする世界で、ずっと防具なしで立たされてきたこと自体に、限界がきている</strong>はずです。</p>
+
+        <div class="evidence-box">
+            <span class="evidence-label">▍客目線データより</span>
+            <p>「本当に良客と呼ばれる層は、LINEを催促してくる女の子には絶対に入らない。<br>
+            距離感を保って自分の世界を持っている子にこそ、惜しみなく通い続ける。」<br><br>
+            消耗する接客を続けている限り、本当の意味での安定して長く通ってくださるお客様は来ない——これが現実です。</p>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section-block">
+        <h2 class="serif">この教材で何が変わるか</h2>
+
+        <div class="feature-card">
+            <span class="feature-number">01</span>
+            <h3 class="serif">【命の盾】客室でのSOSとフェードアウト術</h3>
+            <p>「今すぐこの客から逃げたい」と思った時、言葉で境界線を引き、物理的な距離を取り、内勤さんを動かして安全に切り抜ける「3つのステップ」を渡します。密室で一人で過剰に怯える必要はありません。</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-number">02</span>
+            <h3 class="serif">「心を削らない接客」のための4つの仮面</h3>
+            <p>相手の承認欲求や支配欲を冷静に見抜き、「素の自分」ではなく「キャラクター」として対応する技術。どんな地雷客が来ても、心まで全部持っていかれにくくなります。</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-number">03</span>
+            <h3 class="serif">良客が残りやすくなる「15文字の言葉」</h3>
+            <p>あなたが無理なく出せる「気を遣わず過ごせる雰囲気」に惹かれる静かな良客に届きやすくする発信の型を教えます。<strong>長文営業で必死さを見せなくても、「この子のところなら休める」と感じてくださるお客様が残りやすい導線</strong>に変えていきます。</p>
+        </div>
+
+        <div class="feature-card">
+            <span class="feature-number">04</span>
+            <h3 class="serif">現場の悲鳴に答える「超・実践Q&A」</h3>
+            <p>更衣室や待機中に本当に起きている悩みだけを選びました。退室時間を守らない客への対応、SNSの嫉妬トラブルの防ぎ方など、明日からすぐ使える対応の答えを用意しています。</p>
+        </div>
+    </section>
+
+    <!-- CONTENTS -->
+    <section class="section-block">
+        <h2 class="serif">マニュアルの内容</h2>
+        <p>机上の空論ではなく、現場ですぐに使える具体的な「数」にこだわりました。</p>
+
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-num">30,000</span>
+                <span class="stat-label">文字（総テキスト量）</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">15+</span>
+                <span class="stat-label">コピペLINEテンプレ</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">20</span>
+                <span class="stat-label">現場Q&A厳選収録</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">1</span>
+                <span class="stat-label">緊急SOSフローチャート</span>
+            </div>
+        </div>
+
+        <ul class="toc-list">
+            <li><span class="toc-chapter">第1章【気づき】</span><span class="toc-title">「都合のいい女」を卒業する『安心の枠（マイルール）』</span></li>
+            <li><span class="toc-chapter">第2章【防具】</span><span class="toc-title">あなたの光を汚染する男を弾く「5つの即死NG行動」</span></li>
+            <li><span class="toc-chapter">第3章【心の理解】</span><span class="toc-title">相手の「寂しさ」に飲まれず、心を守る『仮面』の使い分け</span></li>
+            <li><span class="toc-chapter">第4章【命の盾】</span><span class="toc-title">危ないお客さんの見極めと、綺麗なフェードアウトの仕方</span></li>
+            <li><span class="toc-chapter">第5章【沈黙の愛】</span><span class="toc-title">安定して長く通ってくださるお客様と出会い、無理なく単価を上げていく技術</span></li>
+            <li><span class="toc-chapter">第6章【集客のフィルター】</span><span class="toc-title">雑客を切り落とし、静かな良客に届きやすくする『15文字の言葉』</span></li>
+            <li><span class="toc-chapter">第7章【帰還と庇護】</span><span class="toc-title">また来てと言わずに、安心感だけを残す帰り際3分の整え方</span></li>
+            <li><span class="toc-chapter">第8章【永遠の王国】</span><span class="toc-title">少ない良客で安定し、無理な営業を減らして自分のルールで働く設計図</span></li>
+            <li><span class="toc-chapter">付録1</span><span class="toc-title">引退へのロードマップ（無痛の防御口座の作り方）</span></li>
+            <li><span class="toc-chapter">付録2・3</span><span class="toc-title">更衣室で開く、現場＆SNS悩みトップ20 Q&A</span></li>
+        </ul>
+    </section>
+
+    <!-- CTA & PRICE -->
+    <section class="cta-section">
+        <div class="price-box">
+            <div class="price-label">公開記念価格</div>
+            <div class="price-value serif">29,800</div>
+            <div class="price-tax">円（税込）</div>
+            <p class="price-note">
+                今日、無理をして心をすり減らしながら稼ぐ3万円。<br>
+                そして明日も明後日も、同じように怯えながら出勤し続ける日々。<br><br>
+                お客様の一回の指名料と同等のこの金額が、<strong>これから先の出勤で自分を削らずに働くための土台</strong>になります。<br><br>
+                これは、今日をやり過ごすためだけの出費じゃありません。<br>
+                <strong>この先も、自分の働き方を自分で選べるようになるための最初の投資</strong>です。
+            </p>
+        </div>
+
+        <img src="ringo_hero.png" alt="Ringo 無痛の防具マニュアル" style="width:100%;max-width:480px;border-radius:16px;margin-bottom:40px;display:block;margin-left:auto;margin-right:auto;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+
+        <p style="font-family:'Noto Serif JP',serif; font-size:1rem; line-height:2; color:#d0d0d0; margin-bottom:40px; text-align:left;">
+            本当に怖いのは、今日しんどいことだけじゃありません。<br>
+            このまま<strong>「雑に扱われながら耐える働き方」</strong>を続けて、気づいたら心も若さも選択肢も削れていることのはずです。<br><br>
+            次の出勤を、もう丸腰で迎えたくないなら。<br>
+            また同じことで削られる側を終わらせたいなら。<br>
+            <strong>これ以上、お客様やお店に働き方の主導権を握らせたくないなら、</strong>ここで受け取ってください。
+        </p>
+
+        <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+            今すぐ『無痛の防具マニュアル』を受け取る
+        </a>
+
+        <div class="notes-box">
+            <strong>決済と商品の受け渡しに関する注意事項</strong>
+            <ul>
+                <li><strong>決済の安全性：</strong>世界最大のセキュリティ基準を満たす「Stripe」を使用します。作者にカード情報が渡ることはありません。</li>
+                <li><strong>明細の表記：</strong>カード利用明細には「RINGO-MANUAL」と記載され、お仕事に関連する単語は表示されません。</li>
+                <li><strong>商品の受け渡し：</strong>決済後すぐに、入力したメールアドレス宛に専用URLをご案内します。</li>
+                <li><strong>閲覧期限：</strong>閲覧期限はありません。いつでもスマホから読み返せます。</li>
+                <li><strong>返品について：</strong>デジタルコンテンツの性質上、ご購入後の返品・返金はお受け付けできません。</li>
+            </ul>
+            <div style="margin-top: 15px; text-align: center;">
+                <a href="#">特定商取引法に基づく表記</a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
