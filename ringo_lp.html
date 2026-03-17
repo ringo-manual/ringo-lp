@@ -64,9 +64,9 @@
             border-radius: 2px;
         }
         .hero h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             line-height: 1.6;
-            color: #ffffff;
+            color: var(--text-muted);
             font-weight: 500;
             margin-top: 20px;
         }
@@ -81,13 +81,12 @@
 
 
 
-        /* ── 権威性セクション（冒頭） ── */
         .authority-section {
             background: var(--bg-surface);
             border-left: 3px solid var(--accent-gold);
             border-radius: 0 8px 8px 0;
-            padding: 35px 30px;
-            margin: 50px 0;
+            padding: 30px 25px;
+            margin: 40px 0;
         }
         .authority-section p {
             margin: 0 0 15px;
@@ -111,8 +110,8 @@
             background: var(--bg-surface);
             border: 1px solid var(--accent-red-dim);
             border-radius: 8px;
-            padding: 35px 30px;
-            margin: 50px 0;
+            padding: 30px 25px;
+            margin: 40px 0;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             position: relative;
         }
@@ -137,15 +136,16 @@
         .list-ng li, .list-ok li {
             position: relative;
             padding-left: 30px;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             font-size: 0.95rem;
+            line-height: 1.6;
         }
         .list-ng li::before { content: '✖️'; position: absolute; left: 0; top: 1px; }
         .list-ok li::before { content: '⭕️'; position: absolute; left: 0; top: 1px; }
 
         /* ── 共通セクション ── */
         .section-block {
-            padding: 60px 0;
+            padding: 50px 0;
             border-bottom: 1px solid var(--border-light);
         }
         .section-block h2 {
@@ -198,11 +198,12 @@
         /* ── フィーチャーカード ── */
         .feature-card {
             background: var(--bg-surface);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 8px;
             padding: 30px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .feature-card:hover {
             border-color: rgba(212, 175, 55, 0.4);
@@ -271,7 +272,7 @@
 
         /* ── CTA ── */
         .cta-section {
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         .price-box {
@@ -279,8 +280,11 @@
             border: 1px solid rgba(212,175,55,0.3);
             border-radius: 12px;
             padding: 40px 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             box-shadow: var(--shadow-gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .price-label {
             font-size: 0.85rem;
@@ -299,13 +303,14 @@
         .price-note {
             font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 15px;
-            padding-top: 15px;
+            margin-top: 25px;
+            padding-top: 25px;
             border-top: 1px solid var(--border-light);
+            text-align: left;
         }
 
         .cta-button {
-            display: block;
+            display: inline-block;
             background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
             color: #0a0a0c;
             text-decoration: none;
@@ -316,6 +321,9 @@
             box-shadow: var(--shadow-gold);
             transition: all 0.3s ease;
             letter-spacing: 0.05em;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 400px;
         }
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
@@ -364,21 +372,12 @@
 
     </header>
 
-    <!-- 権威性（冒頭） -->
-    <div class="authority-section">
-        <p>はじめまして、Ringoです。</p>
-        <p>私はかつて、<strong>卒業まで18ヶ月連続でNo.1を維持していた時期がありました。</strong>でもそれは、誰よりも多くのお客様を取ったからじゃない。<strong>消耗するお客様との関係を手放して、少数の方々に特に深く寄り添う接客を丁寧に整えた</strong>からです。</p>
-        <p>このマニュアルには、私が現場で積み上げた経験だけでなく、<strong>実際に複数年通い続けた安定して長く通ってくださるお客様の視点</strong>——「なぜその子を指名し続けたのか」「何が萎えて離れたのか」——も整理して落とし込んでいます。</p>
-        <p>女の子側の経験談だけで書かれた教材は山ほどあります。でも、<strong>「なぜ安定して長く通ってくださるお客様が通い続けるのか」を、客の心理まで含めてここまで整理したものは、少なくとも私が見てきた中では多くありません。</strong></p>
-        <p class="quote serif">「選ばれ続ける人は、頑張り方じゃなく距離感の作り方が違う。」</p>
-    </div>
-
     <!-- FILTER -->
-    <div class="filter-section">
+    <div class="filter-section" id="filter">
         <h2 class="serif">⚠️ この先を読み進める前の「確認事項」</h2>
         <p style="font-size: 0.95rem;">このマニュアルは、<strong>「自分の心と体を守りながら、無理な営業をやめて静かな良客だけで月100万を目指したい子」</strong>に向けた実践書です。</p>
 
-        <p style="color: var(--accent-red); font-weight: bold; font-size: 0.9rem; margin-top: 25px;">ただし、以下のような方には向いていません。購入しないでください。</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 25px;">※以下のような方には向いていません。</p>
         <ul class="list-ng">
             <li>明るく盛り上げて、毎日何人ものお客様を数で回して稼ぎたい子</li>
             <li>自分の素顔を曝け出して、SNSでギラギラと集客したい子</li>
@@ -429,6 +428,16 @@
             消耗する接客を続けている限り、本当の意味での安定して長く通ってくださるお客様は来ない——これが現実です。</p>
         </div>
     </section>
+
+    <!-- 権威性（導入後配置） -->
+    <div class="authority-section">
+        <h3 class="serif" style="color: #fff; margin-top: 0; font-size: 1.2rem;">なぜ、このマニュアルを信じていいのか</h3>
+        <p>はじめまして、Ringoです。</p>
+        <p>私はかつて、<strong>卒業まで18ヶ月連続でNo.1を維持していた時期がありました。</strong>でもそれは、誰よりも多くのお客様を取ったからじゃない。<strong>消耗するお客様との関係を手放して、少数の方々に特に深く寄り添う接客を丁寧に整えた</strong>からです。</p>
+        <p>このマニュアルには、私が現場で積み上げた経験だけでなく、<strong>実際に複数年通い続けた安定して長く通ってくださるお客様の視点</strong>——「なぜその子を指名し続けたのか」「何が萎えて離れたのか」——も整理して落とし込んでいます。</p>
+        <p>女の子側の経験談だけで書かれた教材は山ほどあります。でも、<strong>「なぜ安定して長く通ってくださるお客様が通い続けるのか」を、客の心理まで含めてここまで整理したものは、少なくとも私が見てきた中では多くありません。</strong></p>
+        <p class="quote serif">「選ばれ続ける人は、頑張り方じゃなく距離感の作り方が違う。」</p>
+    </div>
 
     <!-- BENEFITS -->
     <section class="section-block">
@@ -504,6 +513,11 @@
             <div class="price-label">公開記念価格</div>
             <div class="price-value serif">29,800</div>
             <div class="price-tax">円（税込）</div>
+
+            <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+                今すぐ『無痛の防具マニュアル』を受け取る
+            </a>
+
             <p class="price-note">
                 今日、無理をして心をすり減らしながら稼ぐ3万円。<br>
                 そして明日も明後日も、同じように怯えながら出勤し続ける日々。<br><br>
@@ -513,7 +527,7 @@
             </p>
         </div>
 
-        <img src="ringo_hero.png" alt="Ringo 無痛の防具マニュアル" style="width:100%;max-width:480px;border-radius:16px;margin-bottom:40px;display:block;margin-left:auto;margin-right:auto;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+        <img src="ringo_hero.png" alt="Ringo 無痛の防具マニュアル" style="width:100%;max-width:480px;border-radius:16px;margin-bottom:30px;display:block;margin-left:auto;margin-right:auto;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
 
         <p style="font-family:'Noto Serif JP',serif; font-size:1rem; line-height:2; color:#d0d0d0; margin-bottom:40px; text-align:left;">
             本当に怖いのは、今日しんどいことだけじゃありません。<br>
@@ -523,7 +537,7 @@
             <strong>これ以上、お客様やお店に働き方の主導権を握らせたくないなら、</strong>ここで受け取ってください。
         </p>
 
-        <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+        <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button" style="margin-bottom: 20px;">
             今すぐ『無痛の防具マニュアル』を受け取る
         </a>
 
