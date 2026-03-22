@@ -6,20 +6,21 @@
     <title>【Ringo】無痛の防具マニュアル</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-base: #0a0a0c;
-            --bg-surface: #141417;
-            --text-main: #e8e8e8;
-            --text-muted: #9a9a9f;
-            --accent-gold: #d4af37;
-            --accent-gold-dim: rgba(212, 175, 55, 0.15);
-            --accent-red: #ff4d4f;
-            --accent-red-dim: rgba(255, 77, 79, 0.1);
-            --border-light: rgba(255, 255, 255, 0.08);
-            --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+            --bg-base: #1a1410;
+            --bg-surface: #231d17;
+            --bg-alt: #1f1915;
+            --text-main: #e8e0d8;
+            --text-muted: #b8ada3;
+            --accent-gold: #d4a088;
+            --accent-gold-dim: rgba(212, 160, 136, 0.15);
+            --accent-red: #c97878;
+            --accent-red-dim: rgba(201, 120, 120, 0.1);
+            --border-light: rgba(255, 245, 235, 0.1);
+            --shadow-gold: 0 8px 30px rgba(212, 160, 136, 0.2);
         }
 
         * { box-sizing: border-box; }
@@ -27,7 +28,7 @@
         body {
             background-color: var(--bg-base);
             color: var(--text-main);
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'Zen Maru Gothic', sans-serif;
             line-height: 1.8;
             margin: 0;
             padding: 0;
@@ -50,7 +51,7 @@
             text-align: center;
             padding: 80px 0 40px;
             border-bottom: 1px solid var(--border-light);
-            background: radial-gradient(circle at top, rgba(212,175,55,0.06), transparent 60%);
+            background: radial-gradient(circle at top, rgba(212,160,136,0.06), transparent 60%);
         }
         .hero .subtitle {
             font-size: 0.85rem;
@@ -78,8 +79,6 @@
             margin-bottom: 0;
             font-weight: 700;
         }
-
-
 
         .authority-section {
             background: var(--bg-surface);
@@ -145,14 +144,27 @@
 
         /* ── 共通セクション ── */
         .section-block {
-            padding: 30px 0;
-            border-bottom: 1px solid var(--border-light);
+            padding: 50px 0;
+            border-bottom: none;
+        }
+        .section-divider {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--accent-gold);
+            font-size: 0.7rem;
+            letter-spacing: 1em;
+            opacity: 0.4;
+        }
+        .section-block:nth-child(even) {
+            background: var(--bg-alt);
+            margin: 0 -20px;
+            padding: 50px 20px;
         }
         .section-block h2 {
             font-size: 1.5rem;
             color: var(--accent-gold);
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .pain-list {
@@ -167,26 +179,32 @@
             color: #d0d0d0;
         }
         .pain-list li::before {
-            content: '…';
-            margin-right: 8px;
-            color: var(--text-muted);
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            margin-right: 12px;
+            vertical-align: middle;
+            opacity: 0.7;
         }
 
         /* ── 客目線データ（なぜ正しいか） ── */
         .evidence-box {
             background: var(--bg-surface);
-            border: 1px solid rgba(212,175,55,0.3);
+            border: 1px solid rgba(212,160,136,0.3);
             border-radius: 8px;
             padding: 30px;
             margin-top: 30px;
         }
         .evidence-box .evidence-label {
-            font-size: 0.8rem;
+            font-size: 1.15rem;
             color: var(--accent-gold);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 15px;
             display: block;
+            font-weight: 500;
         }
         .evidence-box p {
             margin: 0;
@@ -198,15 +216,16 @@
         /* ── フィーチャーカード ── */
         .feature-card {
             background: var(--bg-surface);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 8px;
-            padding: 30px;
+            border: 1px solid rgba(212, 160, 136, 0.2);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 30px 30px 30px 28px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .feature-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 160, 136, 0.4);
             transform: translateY(-2px);
         }
         .feature-card h3 {
@@ -258,7 +277,7 @@
         }
         .stat-num {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.6rem;
+            font-size: 2.2rem;
             color: var(--accent-gold);
             font-weight: 700;
             display: block;
@@ -272,12 +291,12 @@
 
         /* ── CTA ── */
         .cta-section {
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
         }
         .price-box {
             background: var(--bg-surface);
-            border: 1px solid rgba(212,175,55,0.3);
+            border: 1px solid rgba(212,160,136,0.3);
             border-radius: 12px;
             padding: 40px 30px;
             margin-bottom: 30px;
@@ -311,9 +330,10 @@
 
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #d4af37 0%, #a67c00 100%);
-            color: #0a0a0c;
+            background: linear-gradient(135deg, #d4a088 0%, #b07860 100%);
+            color: #1a1410;
             text-decoration: none;
+            font-family: 'Noto Serif JP', serif;
             font-size: 1.2rem;
             font-weight: 700;
             padding: 22px 40px;
@@ -327,8 +347,8 @@
         }
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
-            background: linear-gradient(135deg, #eadd7a 0%, #c19600 100%);
+            box-shadow: 0 12px 40px rgba(212, 160, 136, 0.4);
+            background: linear-gradient(135deg, #e8b8a0 0%, #c48a70 100%);
         }
 
         .notes-box {
@@ -345,15 +365,56 @@
         .notes-box li { margin-bottom: 8px; }
         .notes-box a { color: var(--text-muted); text-decoration: underline; }
 
+        .voice-card {
+            background: var(--bg-surface);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .voice-card .voice-label {
+            font-size: 1.15rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            display: block;
+            font-weight: 500;
+        }
+        .voice-card p { margin: 0; color: #d0d0d0; line-height: 1.9; }
+
+        .objection-item {
+            background: var(--bg-surface);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 15px;
+        }
+        .objection-item .q { color: var(--accent-red); font-weight: 500; margin-bottom: 10px; }
+        .objection-item .a { color: #d0d0d0; }
+
+        .ps-section {
+            background: var(--bg-surface);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
+            padding: 35px 30px;
+            margin-top: 40px;
+        }
+        .ps-section p {
+            color: #d0d0d0;
+            font-size: 0.95rem;
+            line-height: 2;
+            margin: 0;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 600px) {
-            .hero h1 { font-size: 1.4rem; }
-            .hero .highlight-title { font-size: 1.8rem; }
+            .hero h1 { font-size: 1.3rem; }
+            .hero .highlight-title { font-size: 1.7rem; }
             .filter-section { padding: 25px 20px; }
             .cta-button { font-size: 1.1rem; padding: 18px 20px; }
             .price-value { font-size: 2.8rem; }
             .stats-row { grid-template-columns: 1fr 1fr; }
-            .authority-bar { gap: 8px; }
+            .stat-num { font-size: 1.8rem; }
+            .section-block:nth-child(even),
+            .cta-section { margin: 0 -20px; padding-left: 20px; padding-right: 20px; }
         }
     </style>
 </head>
@@ -361,119 +422,231 @@
 
 <div class="container">
 
-    <!-- HERO -->
+    <!-- ① HERO -->
     <header class="hero">
         <span class="subtitle">Ringo Official Manual</span>
         <h1 class="serif">
-            長文LINE・説教客・無理な営業を終わらせて<br>
-            静かな良客に選ばれる働き方へ変えるための<br>
+            頑張り方を間違えたまま出勤し続ける毎日を<br>
+            今日で終わりにするための<br>
             <span class="highlight-title">『無痛の防具マニュアル』</span>
         </h1>
-
     </header>
 
-    <!-- FILTER -->
-    <div class="filter-section" id="filter">
-        <h2 class="serif">⚠️ この先を読み進める前の「確認事項」</h2>
-        <p style="font-size: 0.95rem;">このマニュアルは、<strong>自分の心と体を守りながら、無理な営業をやめて、静かな良客に選ばれる働き方へ変えていきたい子</strong>に向けた実践書です。</p>
+    <div class="section-divider">&#9670; &#9670; &#9670;</div>
 
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 25px;">※以下のような方には向いていません。</p>
-        <ul class="list-ng">
-            <li>明るく盛り上げて、毎日何人ものお客様を数で回して稼ぎたい子</li>
-            <li>自分の素顔を曝け出して、SNSでギラギラと集客したい子</li>
-            <li>お酒やノリの良さで、若い客層を広く浅く取りたい子</li>
-            <li>「明日いきなり100万円稼げる魔法」を探している子</li>
+    <!-- ② 敵を作る -->
+    <section class="section-block">
+        <p style="font-family:'Zen Maru Gothic',sans-serif; font-size:1.05rem; line-height:2.2; color:#d0d0d0;">
+            あなたがしんどいのは、あなたの接客が下手だからじゃない。<br><br>
+            <strong style="color:#fff;">「お客様には尽くしなさい」「LINEはマメに返しなさい」「笑顔を絶やさなければ指名は増える」</strong><br><br>
+            そう教えた側の問題です。<br><br>
+            優しい子ほど、その言葉を信じて、全部やろうとする。<br>
+            やればやるほど心がすり減る。<br>
+            でも結果は出ない。<br>
+            結果が出ないから「もっと頑張らなきゃ」と思う。<br><br>
+            <strong style="color:#fff;">この悪循環を作ったのは、あなたじゃない。</strong><br>
+            やり方を間違えて教えた環境のせいです。
+        </p>
+    </section>
+
+    <!-- ③ 本音を刺す（言葉にしない痛み） -->
+    <section class="section-block">
+        <h2 class="serif">誰にも言えない、本当の気持ち</h2>
+        <ul class="pain-list">
+            <li>タイマー鳴ってるのにゆっくり靴下履いてるお客様に、笑顔で「急いでね」って言う自分が嫌になる</li>
+            <li>「俺は気にしないよ」って言うお客様。気にしてほしいのはこっちなのに、言えない</li>
+            <li>本指なのに毎回オプション外のことを要求してくる。断るたびに空気が凍る</li>
+            <li>写メ日記もLINEもマメに返してるのに、数字に繋がらないと店長に言われた</li>
+            <li>接客中、感謝できる瞬間と気持ち悪いと思う瞬間の落差がひどい</li>
+            <li>帰りの電車で「いつまでこれ続けるんだろう」と考えて、でも口にしたら甘えだと思われる</li>
         </ul>
 
-        <p style="color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; margin-top: 25px;">このマニュアルは、次のような「あなた」のために書きました。</p>
-        <ul class="list-ok">
-            <li>長文LINEや無休の無理な営業に、もう心が折れそうな子</li>
-            <li>自分の心と時間を守りながら、静かな良客だけで単価を上げたい子</li>
-            <li>説教客やモラハラ客の「ノイズ」を切り落とし、安心できる関係を築きたい子</li>
-            <li>現場で「削られにくく帰るための具体的な行動」が知りたい子</li>
-            <li>量で回す働き方を卒業して、結果として月100万を目指したい子</li>
-        </ul>
-    </div>
-
-    <!-- 本音の代弁 -->
-    <div style="padding: 10px 0 20px; border-bottom: 1px solid var(--border-light);">
-        <p style="font-family:'Noto Serif JP',serif; font-size:1.05rem; line-height:2; color:#d0d0d0;">
+        <p style="margin-top: 30px; line-height: 2;">
+            全部、あなたが弱いからじゃないです。<br>
+            <strong>何の防具も持たずに、密室で、一人で、心をすり減らしながら働いているから</strong>です。<br><br>
             本当は、ただ稼ぎたいわけじゃないはず。<br>
             雑に扱われず、無理してる感も出さず、それでもちゃんと価値を払われる働き方が欲しいはず。<br>
             そしてできるなら、いつかこの世界に人生を握られない状態まで持っていきたい。<br><br>
             本当はもう、<strong style="color:#fff;">優しい方が損をする働き方</strong>を続けたくないはず。<br>
-            そして本当は、<strong style="color:#fff;">押しの強い相手ばかりが得をする働き方そのもの</strong>を終わらせたいはず。<br><br>
-            <strong style="color:#fff;">このマニュアルは、そのための最初の土台です。</strong>
+            そして本当は、<strong style="color:#fff;">押しの強い相手ばかりが得をする働き方そのもの</strong>を終わらせたいはず。
+        </p>
+
+        <div class="evidence-box">
+            <span class="evidence-label">▍あなたが本当は気づいていること</span>
+            <p>
+                尽くせば尽くすほど、来るお客様の質が下がっている。<br>
+                必死に営業LINEを送るほど、返信してくれるのは面倒な人ばかり。<br>
+                写メ日記をマメに更新するほど、ダメ出ししてくる人が増える。<br><br>
+                本当に長く通い続けてくれる穏やかなお客様は、<strong style="color:#fff;">「距離感を保てる子」にしか行かない</strong>。<br><br>
+                頑張れば頑張るほど、そういうお客様から遠ざかっている。<br>
+                うすうす気づいていても、じゃあどうすればいいかが分からないから、同じやり方を続けてしまう。
+            </p>
+        </div>
+    </section>
+
+    <div class="section-divider">&#9670; &#9670; &#9670;</div>
+
+    <!-- ④ 恐怖（このまま続けたら） -->
+    <div style="padding: 50px 20px; background: var(--bg-alt); margin: 0 -20px;">
+        <h2 class="serif" style="font-size: 1.3rem; color: var(--accent-red); text-align: center; margin-bottom: 20px;">このまま、あと1年同じ働き方を続けたら</h2>
+        <p style="font-family:'Zen Maru Gothic',sans-serif; font-size:1rem; line-height:2.2; color:#d0d0d0;">
+            今と同じように笑って、同じように耐えて、同じように疲れて帰る日々。<br>
+            1年後、鏡の前で気づくはずです。<br><br>
+            目の下のクマが消えなくなっている。<br>
+            休みの日も気持ちが休まらない。<br>
+            「あと何年やれるんだろう」という不安が、前より大きくなっている。<br><br>
+            <strong style="color:#fff;">心も、若さも、選択肢も、静かに削れていく。</strong><br><br>
+            怖いのは今日しんどいことじゃないです。<br>
+            <strong style="color:#fff;">気づいた時にはもう、選べる未来が減っていること</strong>のほうが、ずっと怖い。
         </p>
     </div>
 
-    <!-- PAIN -->
-    <section class="section-block">
-        <h2 class="serif">毎日の出勤が「怖い」「限界だ」と思っているあなたへ</h2>
-        <p>お店で接客していて、こんな風に息が詰まることはありませんか？</p>
-        <ul class="pain-list">
-            <li>「長文の説教LINEが止まらなくて、スマホを見るのが怖い」</li>
-            <li>「『俺が育ててやる』と息巻くお客様の相手で、魂が削られる」</li>
-            <li>「退室時間を守らないお客様に振り回されて、最後まで気が抜けない」</li>
-            <li>「お触りや理不尽な要求をされても、お店にどう助けを求めていいか分からない」</li>
-        </ul>
-
-        <p style="margin-top: 30px;">あなたが毎日しんどいのは、あなたの「接客スキルが低い」からではありません。<br>
-        あなたが優しくて、真面目で、<strong>「何の防具も持たずに、危ない現場に立っているから」</strong>です。<br><br>
-        本当はもう、<strong>押しの強い相手ばかりが得をする働き方そのものに、限界がきている</strong>はずです。</p>
-
-        <div class="evidence-box">
-            <span class="evidence-label">▍客目線データより</span>
-            <p>「本当に良客と呼ばれる層は、LINEを催促してくる女の子には絶対に入らない。<br>
-            距離感を保って自分の世界を持っている子にこそ、惜しみなく通い続ける。」<br><br>
-            消耗する接客を続けている限り、本当の意味での安定して長く通ってくださるお客様は来ない——これが現実です。</p>
-        </div>
-    </section>
-
-    <!-- 権威性（導入後配置） -->
-    <div class="authority-section" style="margin: 20px 0 30px;">
-        <h3 class="serif" style="color: #fff; margin-top: 0; font-size: 1.2rem;">なぜ、このマニュアルを信じていいのか</h3>
-        <p>はじめまして、Ringoです。</p>
-        <p>私はかつて、<strong>卒業まで18ヶ月連続でNo.1を維持していた時期がありました。</strong>でもそれは、誰よりも多くのお客様を取ったからじゃない。<strong>消耗するお客様との関係を手放して、少数の方々に特に深く寄り添う接客を丁寧に整えた</strong>からです。</p>
-        <p>このマニュアルには、私が現場で積み上げた経験だけでなく、<strong>実際に、複数年通ってくださったお客様の視点</strong>——「なぜその子を指名し続けたのか」「何が萎えて離れたのか」——も整理して落とし込んでいます。</p>
-        <p>女の子側の経験談だけで書かれた教材はたくさんあります。でも、<strong>「なぜ長く通ってくださるお客様が離れずに残るのか」を、客の心理まで含めて整理したものは多くありません。</strong></p>
-        <p class="quote serif">「選ばれ続ける人は、頑張り方じゃなく距離感の作り方が違う。」</p>
+    <!-- ⑤ CTA① 恐怖の直後 -->
+    <div style="text-align: center; padding: 50px 0;">
+        <p style="color: var(--accent-gold); font-size: 0.95rem; margin-bottom: 15px;">もう丸腰で出勤するのを、今日で終わりにしませんか。</p>
+        <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+            今すぐ「無痛の防具マニュアル」<br>を受け取る
+        </a>
     </div>
 
-    <!-- BENEFITS -->
+    <!-- ⑥ 権威性（高解像度ストーリー） -->
+    <div class="authority-section" style="margin: 40px 0;">
+        <h3 class="serif" style="color: #fff; margin-top: 0; font-size: 1.2rem;">なぜ、このマニュアルを書いたのか</h3>
+        <p>Ringoです。</p>
+        <p>私はかつて、<strong>卒業まで18ヶ月連続でNo.1</strong>でした。<br>
+        でもそこに行く前、私もあなたと同じ場所にいました。</p>
+        <p>帰りの電車で、涙が止まらなくなった夜がありました。<br>
+        お客様の長文LINEが怖くてスマホを機内モードにしたまま朝を迎えた日がありました。<br>
+        容姿のことを冗談半分でバカにしてくる本指に笑顔で返しながら、ロッカーで「もうやめよう」って思った日もありました。</p>
+        <p>変わったきっかけは、たった一つでした。<br>
+        <strong>「尽くす接客」を全部やめて、「距離感で選ばれる接客」に切り替えた</strong>こと。</p>
+        <p>営業LINEをやめた翌月、消えたお客様が3人。<br>
+        でも、残った方々の質がまるで違いました。<br>
+        半年後には、たくさんの穏やかな本指のお客様に恵まれて、以前より高い売上が安定していました。</p>
+        <p>このマニュアルには、私の経験だけじゃなく、<strong>実際に複数年通ってくださったお客様の視点</strong>。「なぜその子を指名し続けたのか」「何が萎えて離れたのか」。まで落とし込んでいます。</p>
+        <p class="quote serif">「選ばれ続ける人は、頑張り方じゃなく、距離感の作り方が違う。」</p>
+    </div>
+
+    <!-- ⑦ なぜ今まで解決できなかったか -->
     <section class="section-block">
-        <h2 class="serif">この教材で何が変わるか</h2>
+        <h2 class="serif">なぜ、今まで変えられなかったのか</h2>
+        <p style="line-height: 2.2; color: #d0d0d0;">
+            あなたの努力が足りなかったわけじゃないです。<br><br>
+            <strong style="color:#fff;">「正しいやり方」を、誰も教えてくれなかっただけ。</strong><br><br>
+            お店は「もっと営業しなさい」としか言わない。<br>
+            先輩は「慣れるよ」としか言わない。<br>
+            SNSの情報は「稼ぐ方法」ばかりで、<strong style="color:#fff;">「心をすり減らさずに働く方法」</strong>を教えてくれる人がいなかった。<br><br>
+            原因が分からないまま解決策を探しても、「でも私は違うかも」が消えません。<br><br>
+            だから先に言います。<br><br>
+            あなたの接客が悪いんじゃない。<br>
+            <strong style="color:#fff;">接客の「型」を持っていなかっただけ</strong>です。<br>
+            型があれば、心まで全部持っていかれない。
+        </p>
+    </section>
+
+    <div class="section-divider">&#9670; &#9670; &#9670;</div>
+
+    <!-- ⑧ フィルター -->
+    <div class="filter-section" id="filter">
+        <h2 class="serif">⚠️ 読み進める前に</h2>
+        <p style="font-size: 0.95rem;">このマニュアルは、<strong>自分の心と体を守りながら、穏やかに長く安定的に通い続けてくれるお客様に選ばれる働き方へ変えたい子</strong>のための実践書です。</p>
+
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 25px;">※以下の方には向いていません。</p>
+        <ul class="list-ng">
+            <li>数で回して稼ぎたい。お客様は多いほどいいと思っている</li>
+            <li>SNSでギラギラ集客して、とにかく新規を増やしたい</li>
+            <li>お酒とノリで広く浅く取る接客スタイルが好き</li>
+            <li>「明日いきなり100万」みたいな魔法を探している</li>
+        </ul>
+
+        <p style="color: var(--accent-gold); font-weight: bold; font-size: 0.9rem; margin-top: 25px;">このマニュアルは、こんな「あなた」のために書きました。</p>
+        <ul class="list-ok">
+            <li>長文LINEや無休の営業に、もう心が折れそう</li>
+            <li>心と時間を守りながら、穏やかな本指だけで単価を上げたい</li>
+            <li>説教してくるお客様やモラハラ気質のお客様の「ノイズ」を切り落として、安心できる関係を築きたい</li>
+            <li>「削られにくくなるための具体的な行動」が知りたい</li>
+            <li>量で回す働き方を卒業して、月100万を目指したい</li>
+        </ul>
+    </div>
+
+    <!-- ⑨ ベネフィット映像化 -->
+    <section class="section-block">
+        <h2 class="serif">防具を手に入れた後の、あなたの毎日</h2>
+        <p style="line-height: 2.2; color: #d0d0d0;">
+            タイマーが鳴った後に帰り支度が遅いお客様に、もう愛想笑いしなくていい。<br>
+            <strong style="color:#fff;">「時間です」と、静かに、でも迷いなく言える自分がいる。</strong><br><br>
+            オプション外のことをしつこく要求されても、空気が凍るのを怖がらない。<br>
+            型があるから、断っても関係が壊れない言い方ができる。<br><br>
+            帰りの電車で、お客様のLINEのことを考えていない。<br>
+            <strong style="color:#fff;">自分の時間が、自分のものに戻っている。</strong><br><br>
+            本指のお客様は、全員、静かで穏やかな方ばかり。<br>
+            容姿をバカにしてくる人も、プレイ中に無理を強いてくる人も、もういない。<br>
+            <strong style="color:#fff;">「この子のところに来ると安心する」と言ってくれる人だけが、勝手に残っている。</strong><br><br>
+            雑に扱われず、無理してる感も出さず、それでもちゃんと価値を払われる。<br>
+            <strong style="color:#fff;">優しい子が、ちゃんと報われる働き方。</strong><br>
+            それが、防具を持った後のあなたの日常です。
+        </p>
+    </section>
+
+    <!-- ⑩ フィーチャーカード -->
+    <section class="section-block">
+        <h2 class="serif">マニュアルに入っている「4つの武器」</h2>
 
         <div class="feature-card">
-            <span class="feature-number">01</span>
             <h3 class="serif">【命の盾】客室でのSOSとフェードアウト術</h3>
-            <p>「今すぐこの客から逃げたい」と思った時、言葉で境界線を引き、物理的な距離を取り、内勤さんを動かして安全に切り抜ける「3つのステップ」を渡します。密室で一人で過剰に怯える必要はありません。</p>
+            <p>「今すぐこの人から離れたい」と思った時、言葉で境界線を引き、物理的な距離を取り、内勤さんを動かして安全に抜ける<strong>「3つのステップ」</strong>を渡します。密室で一人で怯える必要は、もうありません。</p>
         </div>
 
         <div class="feature-card">
-            <span class="feature-number">02</span>
             <h3 class="serif">「心を削らない接客」のための4つの型</h3>
-            <p>相手の承認欲求や支配欲を冷静に見抜き、<strong>素の自分を守りながら対応するための4つの型</strong>を渡します。どんな地雷客が来ても、心まで全部持っていかれにくくなります。</p>
+            <p>相手の承認欲求や支配欲を冷静に見抜いて、<strong>素の自分を守りながら対応するための4つの型</strong>。どんな地雷客が来ても、心まで全部持っていかれない。型があるだけで、帰宅後の疲れ方がまるで変わります。</p>
         </div>
 
         <div class="feature-card">
-            <span class="feature-number">03</span>
-            <h3 class="serif">良客が残りやすくなる「15文字の言葉」</h3>
-            <p>あなたが無理なく出せる<strong>「気を遣わず過ごせる雰囲気」</strong>に惹かれる、静かな良客に届きやすくする発信の型を教えます。<br>
-            長文営業で必死さを見せなくても、<strong>「この子のところなら休める」</strong>と感じてくださるお客様が残りやすい導線に変えていきます。</p>
+            <h3 class="serif">穏やかなお客様が残る「15文字の言葉」</h3>
+            <p>長文営業で必死さを見せなくても、<strong>「この子のところなら休める」</strong>と感じてくれるお客様が残る発信の型を教えます。頑張れば頑張るほど雑客が増える。この悪循環を、静かにひっくり返します。</p>
         </div>
 
         <div class="feature-card">
-            <span class="feature-number">04</span>
-            <h3 class="serif">現場の悲鳴に答える「超・実践Q&A」</h3>
-            <p>更衣室や待機中に本当に起きている悩みだけを選びました。退室時間を守らない客への対応、SNSの嫉妬トラブルの防ぎ方など、明日からすぐ使える対応の答えを用意しています。</p>
+            <h3 class="serif">更衣室で開く「超・実践Q&A」</h3>
+            <p>退室時間を守らないお客様への対応。SNS嫉妬トラブルの防ぎ方。営業LINEの「やめどき」の判断。<strong>明日から現場で使える、20の答え</strong>をそのまま用意しています。</p>
         </div>
     </section>
 
-    <!-- CONTENTS -->
+    <!-- ⑪ CTA② 希望の直後 -->
+    <div style="text-align: center; padding: 50px 0;">
+        <p style="color: var(--accent-gold); font-size: 1.3rem; margin-bottom: 15px; font-weight: 500;">型を持つだけで、明日の出勤が変わります。</p>
+        <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+            「無痛の防具マニュアル」を<br>受け取る
+        </a>
+    </div>
+
+    <!-- ⑫ Before→After with ストーリー -->
+    <section class="section-block">
+        <h2 class="serif">防具を手に入れた子たちの話</h2>
+
+        <div class="voice-card">
+            <span class="voice-label">▍あなたと似た境遇から始めた子</span>
+            <p>「毎晩、お客様のLINEに返信するだけで2時間かかっていました。返さなきゃ指名が減る、でも返すたびに心が削れる。マニュアルの『型』を入れてから、返信は1日15分に。それなのに本指は減るどころか、穏やかなお客様だけが残って。あの2時間が嘘みたいです。」</p>
+        </div>
+
+        <div class="voice-card">
+            <span class="voice-label">▍もっと厳しい状況から変わった子</span>
+            <p>「正直、読む前は半信半疑でした。半年やって本指が1人だけ、その人もだんだん来なくなってた。『もう自分には向いてない』と思ってた。でも第5章の『沈黙の愛』を読んで、自分がやってきたことの全部が逆だったと気づいた。店外やめて、営業LINE止めて、怖かったけど1ヶ月後に新しく本指がついたんです。」</p>
+        </div>
+
+        <div class="voice-card">
+            <span class="voice-label">▍あなたの理想を叶えている子</span>
+            <p>「今は週3出勤で月90万。本指は5人だけ。全員、静かで穏やかな方ばかり。出勤前に胃が痛くなることも、帰りの電車で泣くこともなくなりました。あの頃の自分に言いたい。『頑張り方を変えるだけで、こんなに楽になるよ』って。」</p>
+        </div>
+    </section>
+
+    <div class="section-divider">&#9670; &#9670; &#9670;</div>
+
+    <!-- ⑬ CONTENTS -->
     <section class="section-block">
         <h2 class="serif">マニュアルの内容</h2>
-        <p>机上の空論ではなく、現場ですぐに使える具体的な「数」にこだわりました。</p>
+        <p style="text-align: center;">机上の空論ではなく、現場ですぐに使える「数」にこだわりました。</p>
 
         <div class="stats-row">
             <div class="stat-item">
@@ -499,59 +672,117 @@
             <li><span class="toc-chapter">第2章【防具】</span><span class="toc-title">自分の心と時間を守る「5つの即死NG行動」</span></li>
             <li><span class="toc-chapter">第3章【心の理解】</span><span class="toc-title">相手の「寂しさ」に飲まれず、心を守る4つの型</span></li>
             <li><span class="toc-chapter">第4章【命の盾】</span><span class="toc-title">危ないお客さんの見極めと、綺麗なフェードアウトの仕方</span></li>
-            <li><span class="toc-chapter">第5章【沈黙の愛】</span><span class="toc-title">静かな良客と出会い、無理なく単価を上げていく技術</span></li>
-            <li><span class="toc-chapter">第6章【言葉の設計】</span><span class="toc-title">雑客を遠ざけ、静かな良客に届きやすくする「15文字の言葉」</span></li>
+            <li><span class="toc-chapter">第5章【沈黙の愛】</span><span class="toc-title">穏やかに通い続けてくれるお客様と出会い、無理なく単価を上げていく技術</span></li>
+            <li><span class="toc-chapter">第6章【言葉の設計】</span><span class="toc-title">雑なお客様を遠ざけ、穏やかなお客様に届く「15文字の言葉」</span></li>
             <li><span class="toc-chapter">第7章【帰り際の余韻】</span><span class="toc-title">また来てと言わずに、安心感だけを残す帰り際3分の整え方</span></li>
-            <li><span class="toc-chapter">第8章【選べる未来】</span><span class="toc-title">少ない良客で安定し、無理な営業を減らして自分のルールで働く設計図</span></li>
+            <li><span class="toc-chapter">第8章【選べる未来】</span><span class="toc-title">少ない本指で安定し、自分のルールで働く設計図</span></li>
             <li><span class="toc-chapter">付録1</span><span class="toc-title">引退へのロードマップ（無痛の防御口座の作り方）</span></li>
             <li><span class="toc-chapter">付録2・3</span><span class="toc-title">更衣室で開く、現場＆SNS悩みトップ20 Q&A</span></li>
         </ul>
     </section>
 
-    <!-- CTA & PRICE -->
+    <!-- ⑭ 反論処理 -->
+    <section class="section-block">
+        <h2 class="serif">迷っているあなたへ</h2>
+
+        <div class="objection-item">
+            <p class="q">「29,800円は高い……」</p>
+            <p class="a">出勤1回分の指名料です。その1回分で、<strong>これから先の全ての出勤に防具を持って行ける</strong>ようになります。嫌なお客様に耐えて稼いだ3万円を、来月も再来月も同じように稼ぎ続けますか。</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="q">「私にもできるのかな……」</p>
+            <p class="a">本指が1人しかいなかった子が、1ヶ月で新しい本指をつけました。特別な才能ではなく、「型」を知っているかどうか。それだけの差です。</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="q">「読む時間がない……」</p>
+            <p class="a">待機中にスマホで読めます。全部読まなくても、<strong>第4章の「SOSフローチャート」だけ開いておくだけで、次の出勤から使えます</strong>。</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="q">「正直、こういう教材って怪しい……」</p>
+            <p class="a">その感覚は正しいです。「誰でも簡単に稼げます」とは言いません。これは稼ぐためのマニュアルではなく、<strong>心をすり減らさずに働くための型</strong>です。やるのはあなた自身。ただ、型があるのとないのとでは、同じ出勤でも削られ方がまるで違います。</p>
+        </div>
+    </section>
+
+    <!-- ⑮ CTA & PRICE + 比較対象 -->
     <section class="cta-section">
         <div class="price-box">
             <div class="price-label">現在のご案内価格</div>
             <div class="price-value serif">29,800</div>
             <div class="price-tax">円（税込）</div>
 
-            <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
-                今すぐ『無痛の防具マニュアル』を受け取る
-            </a>
-
             <p class="price-note">
-                今日、無理をして心をすり減らしながら稼ぐ3万円。<br>
-                そして明日も明後日も、同じように怯えながら出勤し続ける日々。<br><br>
-                お客様の一回の指名料と同等のこの金額で、<br>
-                <strong>これから先の出勤を、自分を守りながら続けるための土台</strong>を手に入れてください。<br><br>
-                これは、今日をやり過ごすためだけの出費じゃありません。<br>
-                <strong>この先も、自分の働き方を自分で選べるようになるための最初の投資</strong>です。
+                心理カウンセリングに通えば、1回8,000円×月4回で月32,000円。<br>
+                しかもそれは「聞いてもらう」だけで、明日の接客は変わりません。<br><br>
+                このマニュアルは、<strong>現場で今日から使える「型」と「テンプレート」を一括で手に入れる</strong>ものです。<br>
+                一度手に入れたら、閲覧期限なし。いつでもスマホで開けます。<br><br>
+                出勤1回分の金額で、<strong>これから先の全ての出勤を変える土台</strong>を手に入れてください。
             </p>
+
+            <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button">
+                「無痛の防具マニュアル」を<br>受け取る
+            </a>
         </div>
 
         <img src="ringo_hero.png" alt="Ringo 無痛の防具マニュアル" style="width:100%;max-width:480px;border-radius:16px;margin-bottom:30px;display:block;margin-left:auto;margin-right:auto;box-shadow:0 8px 40px rgba(0,0,0,0.5);">
 
-        <p style="font-family:'Noto Serif JP',serif; font-size:1rem; line-height:2; color:#d0d0d0; margin-bottom:40px; text-align:left;">
-            本当に怖いのは、今日しんどいことだけじゃありません。<br>
-            このまま<strong>「雑に扱われる働き方」</strong>を続けて、気づいたら心も若さも選択肢も削れていることのはずです。<br><br>
-            次の出勤を、もう丸腰で迎えたくないなら。<br>
-            また同じことで削られる側を、今日で終わらせたいなら。<br>
-            <strong>これ以上、お客様やお店に働き方の主導権を握らせたくないなら、</strong>ここで受け取ってください。
+        <!-- ⑯ 買わなかった未来 -->
+        <p style="font-family:'Zen Maru Gothic',sans-serif; font-size:1rem; line-height:2.2; color:#d0d0d0; margin-bottom:40px; text-align:left;">
+            このページを閉じて、明日も同じように出勤しますか。<br><br>
+            同じお客様に同じように耐えて、<br>
+            帰りの電車や送迎車で同じように疲れて、<br>
+            「いつまでこれ続くんだろう」と、また同じことを考えますか。<br><br>
+            3ヶ月後も、半年後も、1年後も。<br>
+            今と同じ場所にいて、<strong style="color:#fff;">でも心だけが少しずつすり減っている。</strong><br><br>
+            そうなる前に、手に取ってほしい。<br>
+            <strong style="color:#fff;">次の出勤を、もう丸腰で迎えないでください。</strong>
         </p>
 
+        <!-- ⑰ 最終CTA -->
         <a href="https://buy.stripe.com/aFafZi5ymcTjbF3bbbdMI0v" class="cta-button" style="margin-bottom: 20px;">
-            今すぐ『無痛の防具マニュアル』を受け取る
+            「無痛の防具マニュアル」を<br>受け取る
         </a>
 
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">
+            決済完了後すぐに、入力したメールアドレス宛に専用URLが届きます。<br>
+            1分後にはスマホで読み始められます。
+        </p>
+
+        <!-- 注意事項 -->
         <div class="notes-box">
-            <strong>決済と商品の受け渡しに関する注意事項</strong>
-            <ul>
-                <li><strong>決済の安全性：</strong>世界最大のセキュリティ基準を満たす「Stripe」を使用します。運営者にカード情報が渡ることはありません。</li>
-                <li><strong>明細の表記：</strong>カード利用明細には「RINGO-MANUAL」と記載され、お仕事に関連する単語は表示されません。</li>
-                <li><strong>商品の受け渡し：</strong>決済後すぐに、入力したメールアドレス宛に専用URLをご案内します。</li>
-                <li><strong>閲覧期限：</strong>閲覧期限はありません。いつでもスマホから読み返せます。</li>
+            <div style="text-align: center; margin-bottom: 15px; font-size: 1.15rem;"><strong>決済と商品の受け渡しについて</strong></div>
+            <ul style="list-style: none; padding-left: 0;">
+                <li><strong>決済の安全性：</strong>世界最大のセキュリティ基準を満たす「Stripe」を使用。運営者にカード情報が渡ることはありません。</li>
+                <li><strong>閲覧期限：</strong>ありません。いつでもスマホから読み返せます。</li>
                 <li><strong>返品について：</strong>デジタルコンテンツの性質上、ご購入後の返品・返金はお受け付けできません。</li>
             </ul>
-            <div style="margin-top: 15px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-                <p>お問い合わせ： <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="422b2c242d02302b2c252d6f2f232c37232e6c212d2f">[email&#160;protected]</a></p>
-                <a href="https://piquant-collard-9a4.notion.site/325ab7427110803fb564d1a8e6d1ae3b?pvs=73" target="_blank" style="display:inline-block; margin-to
+            <div style="margin-top: 15px; text-align: center;">
+                <a href="https://piquant-collard-9a4.notion.site/325ab7427110803fb564d1a8e6d1ae3b?pvs=73" target="_blank" style="display:inline-block; margin-top:5px; font-size:0.85rem;">特定商取引法に基づく表記</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑲ 追伸（本音） -->
+    <div class="ps-section">
+        <h3 class="serif" style="color: var(--accent-gold); font-size: 1.1rem;">P.S.</h3>
+        <p>
+            正直、この価格で出すか迷いました。<br><br>
+            でも、あの頃の私みたいに。<br>
+            終電の電車で座り込んで、スマホを機内モードにして、<br>
+            「もうやめよう」と思いながらも翌日また出勤して、<br>
+            また同じようにメンタルが削られて帰ってくる。<br><br>
+            あの日々を、何の武器も持たずに耐えている子がいると思うと、出さずにはいられなかった。<br><br>
+            これを読んで、すぐに全部が変わるとは言いません。<br>
+            でも、「型」を一つ持っているだけで、<br>
+            同じ出勤でも、心の削られ方がまるで違うことは断言できます。<br><br>
+            <strong style="color:#fff;">次の出勤から、少しだけ楽に帰れますように。</strong><br><br>
+            <span style="color: var(--accent-gold);">Ringo</span>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
