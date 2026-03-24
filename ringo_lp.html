@@ -792,5 +792,10 @@
 
 </div>
 
+<!-- GA4: CTA click tracking -->
+    <script>
+        document.querySelectorAll('a.cta-button').forEach(function(btn){btn.addEventListener('click',function(){gtag('event','cta_click',{event_category:'conversion',event_label:'stripe_purchase_button'});});});
+    </script>
+    </script>
 </body>
 </html>
