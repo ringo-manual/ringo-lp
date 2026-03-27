@@ -792,5 +792,18 @@
 
 </div>
 
+
+    <script>
+        document.querySelectorAll('a.cta-button').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                            gtag('event', 'stripe_click', {
+                                            'event_category': 'conversion',
+                                            'event_label': 'stripe_purchase_button'
+                            });
+                });
+        });
+    </script>
+    </script>
 </body>
 </html>
+h
