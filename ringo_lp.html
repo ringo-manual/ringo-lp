@@ -432,12 +432,19 @@
 
     <!-- ① HERO -->
     <header class="hero">
-        <span class="subtitle">Ringo Official Manual</span>
+        <span class="subtitle">18ヶ月連続No.1の実践マニュアル</span>
         <h1 class="serif">
-            頑張り方を間違えたまま出勤し続ける毎日を<br>
-            今日で終わりにするための<br>
+            優しい子ほど壊れる働き方を<br>
+            今日で終わりにする方法<br>
             <span class="highlight-title">『無痛の防具マニュアル』</span>
         </h1>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 20px; line-height: 1.8;">
+            心を削らず、穏やかなお客様だけに選ばれる<br>
+            「距離感の型」全収録
+        </p>
+        <p style="color: var(--accent-gold); font-size: 1.3rem; font-weight: 700; margin-top: 15px;">
+            ¥29,800<span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">（税込）</span>
+        </p>
     </header>
 
     <div class="section-divider">&#9670; &#9670; &#9670;</div>
@@ -792,18 +799,16 @@
 
 </div>
 
-
-    <script>
-        document.querySelectorAll('a.cta-button').forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                            gtag('event', 'stripe_click', {
-                                            'event_category': 'conversion',
-                                            'event_label': 'stripe_purchase_button'
-                            });
-                });
+<script>
+document.querySelectorAll('a.cta-button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        gtag('event', 'stripe_click', {
+            'event_category': 'conversion',
+            'event_label': 'stripe_purchase_button'
         });
-    </script>
-    </script>
+    });
+});
+</script>
+
 </body>
 </html>
-h
